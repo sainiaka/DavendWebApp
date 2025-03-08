@@ -1,0 +1,26 @@
+<div>
+    <button (click)="changeMode(true)">Login</button>
+    <button (click)="changeMode(false)">Sign Up</button>
+</div>
+
+<div *ngIf="!isLoggedIn && logIn">
+    <h2>Admin Login</h2>
+    <input type="text" placeholder="Email" [(ngModel)]="email">
+    <input type="password" placeholder="Password" [(ngModel)]="password">
+    <button (click)="login()">Login</button>
+</div>
+
+<div *ngIf="!isLoggedIn && !logIn">
+    <h2>Admin Login</h2>
+    <input type="text" placeholder="Username" [(ngModel)]="username">
+    <input type="text" placeholder="Email" [(ngModel)]="email">
+    <input type="password" placeholder="Password" [(ngModel)]="password">
+    <button (click)="signUp()">Sign Up</button>
+</div>
+  
+<div *ngIf="isLoggedIn">
+    <h2>Welcome, Admin!</h2>
+    <button (click)="logout()">Logout</button>
+    <button routerLink="/manage-inventory">Manage Inventory</button>
+</div>
+  

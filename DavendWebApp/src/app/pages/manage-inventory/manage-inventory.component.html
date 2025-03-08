@@ -1,0 +1,48 @@
+<h2>Manage Inventory</h2>
+
+<!-- Add Product Form -->
+<div>
+  <h3>Add Product</h3>
+  <input type="text" placeholder="Name" [(ngModel)]="newProduct.name">
+  <input type="text" placeholder="Description" [(ngModel)]="newProduct.description">
+  <input type="number" placeholder="Quantity" [(ngModel)]="newProduct.qty">
+  <input type="text" placeholder="Image URL" [(ngModel)]="newProduct.imageURL">
+  <button (click)="addProduct()">Add Product</button>
+</div>
+
+<hr>
+
+<!-- Product List -->
+<h3>Products</h3>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Quantity</th>
+    <th>Image</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.description }}</td>
+    <td>{{ product.qty }}</td>
+    <td><img [src]="product.imageURL" width="50"></td>
+    <td>
+      <button (click)="editProduct(product)">Edit</button>
+      <button (click)="deleteProduct(product.id)">Delete</button>
+    </td>
+  </tr>
+</table>
+
+<!-- Edit Product Form -->
+<div *ngIf="editingProduct">
+  <h3>Edit Product</h3>
+  <input type="text" [(ngModel)]="editingProduct.name">
+  <input type="text" [(ngModel)]="editingProduct.description">
+  <input type="number" [(ngModel)]="editingProduct.qty">
+  <input type="text" [(ngModel)]="editingProduct.imageURL">
+  <button (click)="saveEdit()">Save</button>
+  <button (click)="editingProduct = null">Cancel</button>
+</div>
