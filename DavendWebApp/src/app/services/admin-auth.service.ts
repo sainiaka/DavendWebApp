@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AdminAuthService {
   private supabase: SupabaseClient;
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  private loggedIn = new BehaviorSubject<boolean>(this.getStoredLoginState());
 
   constructor() {
     this.supabase = createClient(
@@ -16,12 +16,14 @@ export class AdminAuthService {
     );
   }
 
-  // ✅ Get login status as Observable
+  private getStoredLoginState(): boolean {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
+
   isLoggedIn() {
     return this.loggedIn.asObservable();
   }
 
-  // ✅ Admin Signup (Add Admin User)
   async signUpAdmin(nickName: string, email: string, password: string) {
     const { data, error } = await this.supabase
       .from('AdminUsers')
@@ -34,26 +36,26 @@ export class AdminAuthService {
     return true;
   }
 
-  // ✅ Admin Login (Check if credentials exist)
   async loginAdmin(email: string, password: string) {
     const { data, error } = await this.supabase
       .from('AdminUsers')
       .select('*')
       .eq('email', email)
       .eq('password', password)
-      .single(); // Fetch only one matching admin
+      .single();
 
     if (error || !data) {
       console.error('Login Failed:', error?.message || 'Invalid credentials');
       return false;
     }
 
-    this.loggedIn.next(true); // Set login state to true
+    localStorage.setItem('isLoggedIn', 'true'); // Store login state
+    this.loggedIn.next(true);
     return true;
   }
 
-  // ✅ Logout
   logoutAdmin() {
+    localStorage.removeItem('isLoggedIn'); // Remove login state
     this.loggedIn.next(false);
   }
 }

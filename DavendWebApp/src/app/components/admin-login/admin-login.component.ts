@@ -19,6 +19,12 @@ export class AdminLoginComponent {
     });
   }
 
+  ngOnInit() {
+    this.adminAuthService.isLoggedIn().subscribe(status => {
+      this.isLoggedIn = status;
+    });
+  }
+
   async signUp() {
     const success = await this.adminAuthService.signUpAdmin(this.username, this.email, this.password);
     if (success) {
