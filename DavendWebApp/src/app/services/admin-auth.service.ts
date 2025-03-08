@@ -57,5 +57,6 @@ export class AdminAuthService {
   logoutAdmin() {
     localStorage.removeItem('isLoggedIn'); // Remove login state
     this.loggedIn.next(false);
+    location.reload(); // Refresh the page
   }
 }
