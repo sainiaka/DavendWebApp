@@ -1,0 +1,12 @@
+{
+    "routes": [
+      { "src": "/(.*)", "dest": "/index.html" }
+    ],
+    "builds": [
+      { "src": "dist/davend-web-app/**/*", "use": "@vercel/static" }
+    ],
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/index.html" }
+    ]
+  }
+  
