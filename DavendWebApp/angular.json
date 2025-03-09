@@ -25,9 +25,10 @@
           "options": {
             
             "allowedCommonJsDependencies": [ 
-              "some-package-name"
+              "ws",
+              "@supabase/realtime-js"
             ],
-            
+
             "outputPath": "dist/davend-web-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
