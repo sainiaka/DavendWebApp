@@ -1,9 +1,6 @@
 {
     "rewrites": [
       { "source": "/(.*)", "destination": "/index.html" }
-    ],
-    "builds": [
-      { "src": "dist/davend-web-app/**/*", "use": "@vercel/static" }
     ]
   }
   
