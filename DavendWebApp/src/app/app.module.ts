@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { FormsModule } from '@angular/forms';
 import { ManageInventoryComponent } from './pages/manage-inventory/manage-inventory.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,
-    ManageInventoryComponent
+    ManageInventoryComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

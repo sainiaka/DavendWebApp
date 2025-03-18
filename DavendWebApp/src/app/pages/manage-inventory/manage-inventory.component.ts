@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { AdminAuthService } from '../../services/admin-auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-inventory',
@@ -11,7 +13,7 @@ export class ManageInventoryComponent implements OnInit {
   newProduct = { name: '', description: '', qty: 0, imageURL: '' };
   editingProduct: any = null;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private adminAuthService: AdminAuthService, private router: Router) {}
 
   async ngOnInit() {
     await this.loadProducts();
@@ -53,5 +55,10 @@ export class ManageInventoryComponent implements OnInit {
       await this.productService.deleteProduct(id);
       await this.loadProducts();
     }
+  }
+
+  logout() {
+    this.adminAuthService.logoutAdmin();
+    this.router.navigate(['/login']);
   }
 }

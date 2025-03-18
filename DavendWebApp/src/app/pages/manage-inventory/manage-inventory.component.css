@@ -1,0 +1,159 @@
+/* General Container */
+.inventory-container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Title Styling */
+  h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Navigation Buttons */
+  .nav-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .nav-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+    transition: background 0.3s;
+  }
+  
+  /* Home Button */
+  .home-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .home-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Add Product Form */
+  .add-product {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .add-product input {
+    width: 250px;
+    padding: 10px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+  }
+  
+  .add-product button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .add-product button:hover {
+    background-color: #218838;
+  }
+  
+  /* Product Table */
+  table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Product Image */
+  .product-img {
+    width: 50px;
+    border-radius: 5px;
+  }
+  
+  /* Action Buttons */
+  .action-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s;
+  }
+  
+  .action-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Edit Button */
+  .edit-btn {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .edit-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Edit Product Section */
+  .edit-product {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edit-product input {
+    width: 250px;
+    padding: 10px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+  }
+  
+  .edit-product button {
+    display: inline-block;
+    margin: 5px;
+  }
+  
