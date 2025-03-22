@@ -1,31 +1,108 @@
-<div class="landing-container">
-    <h1>Welcome to Our Store</h1>
+<div class="page-wrapper">
+
+    <!-- ======================== -->
+    <!-- Black Header (Contact Info + Auth Links) -->
+    <!-- ======================== -->
+    <header class="custom-header">
+      <!-- Left: Address -->
+      <div class="header-left">
+        <p>
+          6720 Davand Drive, Unit#9 Mississauga, Ontario<br>
+          Canada, ON L5T 2K7
+        </p>
+      </div>
+  
+      <!-- Center: Phone, Fax, Email -->
+      <div class="header-center">
+        <p>
+          P: 905-670-9144<br>
+          F: 905-670-2930<br>
+          <a href="mailto:info@davendpunch.ca">info&#64;davendpunch.ca</a>
+        </p>
+      </div>
+  
+      <!-- Right: Register & Login Links -->
+      <div class="header-right">
+        <a routerLink="/register">Register</a>
+        <span class="divider">|</span>
+        <a routerLink="/login">Login</a>
+      </div>
+    </header>
+  
+    <!-- ======================== -->
+    <!-- White Header (Logo + Nav) -->
+    <!-- ======================== -->
+    <header class="top-header">
+      <!-- Company Logo -->
+      <div class="logo-section">
+        <img src="assets/comp.png" alt="Company Logo" class="logo-img">
+      </div>
+  
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Our Services</a>
+        <a href="#">Our Products</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+  
+    <!-- ======================== -->
+    <!-- Full-Width Banner Image with Text Overlay -->
+    <!-- ======================== -->
+    <div class="full-width-image">
+      <img src="assets/bolts.png" alt="Banner Image">
+  
+      <!-- Bottom Overlay Banner with Text -->
+      <div class="image-overlay-bottom">
+        <div class="overlay-text">
+          Punch and die button manufacturing. Surface and centerless grinding.
+        </div>
+      </div>
+    </div>
+  
+    <!-- ======================== -->
+    <!-- Company Mission Statement Section -->
+    <!-- ======================== -->
+    <div class="experience-section">
+      <p>
+        With over 30 years of experience, At Davend Punch and Die Co. Ltd. is dedicated to
+        meeting demands of our customers. We specialize in high-precision punch and die
+        bushing/die button manufacturing and offer expert grinding services, including surface
+        grinding and centerless grinding. We provide top-tier solutions to meet your manufacturing needs.
+      </p>
+    </div>
+  
+  </div>
+  
+
+
+  <!-- DANIELS IMPLEMENTATION FOR BROWSWE SERVICES & SEARCH PRODUCTS 
+  <div class="landing-container">
     <p>Discover the best products we have to offer. Log in to manage inventory.</p>
 
-    <!-- Login Button -->
-    <button routerLink="/login">Log In</button>
-
-    <!-- Search Bar -->
-     <!-- (input) calls function everytime user inputs a new letter -->
     <div class="search-bar">
-        <input 
-            type="text" 
-            placeholder="Search products..." 
-            [(ngModel)]="searchTerm"
-            (input)="filterProducts()" 
-        >
+      <input 
+        type="text" 
+        placeholder="Search products..." 
+        [(ngModel)]="searchTerm"
+        (input)="filterProducts()" 
+      >
     </div>
-
-    <!-- Products Section -->
+  
     <h2>Available Products</h2>
     <div class="products-grid">
-        <div class="product-card" *ngFor="let product of filteredProducts">
-            <img [src]="product.imageURL" alt="Product Image">
-            <h3>{{ product.name }}</h3>
-            <p>{{ product.description }}</p>
-            <span>Quantity: {{ product.qty }}</span>
-            <br>
-            <button>Add Service</button>
-        </div>
+      <div class="product-card" *ngFor="let product of filteredProducts">
+        <img [src]="product.imageURL" alt="Product Image">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <span>Quantity: {{ product.qty }}</span>
+        <br>
+        <button>Add Service</button>
+      </div>
     </div>
-</div>
+  </div>
+
+-->
+  
