@@ -1,3 +1,38 @@
-<!-- <app-landing-page></app-landing-page> -->
-<!-- <app-admin-login></app-admin-login> -->
-<router-outlet />
+<!-- ===================================== -->
+<!-- Main App Layout Container (full page) -->
+<!-- ===================================== -->
+<div class="app-container">
+
+  <!-- =================================== -->
+  <!-- Main Content Area (routed views) -->
+  <!-- =================================== -->
+  <main class="main-content">
+    <!-- Angular will inject routed component HTML here -->
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- ======================= -->
+  <!-- Persistent Site Footer -->
+  <!-- ======================= -->
+  <footer class="custom-footer">
+
+    <!-- Left Side: Company Address -->
+    <div class="footer-left">
+      <p>
+        6720 Davand Drive, Unit#9 Mississauga, Ontario<br>
+        Canada, ON L5T 2K7
+      </p>
+    </div>
+
+    <!-- Right Side: Contact Info -->
+    <div class="footer-right">
+      <p>
+        P: 905-670-9144<br>
+        F: 905-670-2930<br>
+        <a href="mailto:info&#64;davendpunch.ca">info&#64;davendpunch.ca</a>
+      </p>
+    </div>
+
+  </footer>
+
+</div>

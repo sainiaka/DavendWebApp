@@ -1,0 +1,64 @@
+/* ============================== */
+/* Ensure component fills full height of viewport */
+/* ============================== */
+:host {
+  display: block;
+  height: 100%;
+}
+
+/* ============================== */
+/* Main layout wrapper */
+/* Handles vertical stacking + full-page height */
+/* ============================== */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+/* ============================== */
+/* Main routed content container */
+/* Grows to fill all space between header and footer */
+/* ============================== */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================== */
+/* Let the router outlet take up available space */
+/* This is key for flex to work properly */
+/* ============================== */
+router-outlet {
+  flex: 1;
+  display: block;
+}
+
+/* ============================== */
+/* Footer Styling */
+/* Always stays at the bottom of the page */
+/* ============================== */
+.custom-footer {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  flex-wrap: wrap;
+  margin-top: auto; /* Push footer to bottom */
+}
+
+/* Footer text styles */
+.custom-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+/* Footer link styles */
+.custom-footer a {
+  color: #aaa;
+  text-decoration: none;
+}
