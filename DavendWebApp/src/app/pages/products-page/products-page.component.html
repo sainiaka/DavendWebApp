@@ -19,9 +19,10 @@
         <img [src]="product.imageURL" alt="Product Image">
         <h3>{{ product.name }}</h3>
         <p>{{ product.description }}</p>
-        <span>Quantity: {{ product.qty }}</span>
+        <span>Quantity Available: {{ product.qty }}</span>
         <br>
-        <button (click)="addProduct(product.id)">Add Product</button>
+        <input type="number" [(ngModel)]="productQty" placeholder="Quantity">
+        <button (click)="addProduct(product.id, productQty)">Add Product</button>
       </div>
     </div>
   </div>

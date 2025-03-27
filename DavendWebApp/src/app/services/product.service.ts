@@ -11,7 +11,7 @@ export class ProductService {
     return await this.supabaseProduct.getProducts();
   }
 
-  async getProductByID(id: any) {
+  async getProductByID(id: string) {
     return await this.supabaseProduct.getProductByID(id)
   }
 

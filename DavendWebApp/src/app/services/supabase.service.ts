@@ -63,8 +63,8 @@ export class SupabaseService {
   }
 
   // Fetch one product
-  async getProductByID(id: any) {
-    const { data, error } = await this.supabase.from('Products').select('*').eq('id', id);
+  async getProductByID(id: string) {
+    const { data, error } = await this.supabase.from('Products').select('*').eq('id', id).single();
     if (error) {
       console.error('Error finding product:', error.message);
       throw error;
