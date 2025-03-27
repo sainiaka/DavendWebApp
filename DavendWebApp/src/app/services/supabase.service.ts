@@ -62,6 +62,16 @@ export class SupabaseService {
     return data || [];
   }
 
+  // Fetch one product
+  async getProductByID(id: any) {
+    const { data, error } = await this.supabase.from('Products').select('*').eq('id', id);
+    if (error) {
+      console.error('Error finding product:', error.message);
+      throw error;
+    }
+    return data || [];
+  }
+
   // Add a new product
   async addProduct(name: string, description: string, qty: number, imageURL: string) {
     const { data, error } = await this.supabase

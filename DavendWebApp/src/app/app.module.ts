@@ -9,6 +9,10 @@ import { ManageInventoryComponent } from './pages/manage-inventory/manage-invent
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProductsPageComponent } from './pages/products-page/products-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { ServicesPageComponent } from './pages/services-page/services-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { FooterComponent } from './components/footer/footer.component';
     ManageInventoryComponent,
     LandingPageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProductsPageComponent,
+    AboutPageComponent,
+    ServicesPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,

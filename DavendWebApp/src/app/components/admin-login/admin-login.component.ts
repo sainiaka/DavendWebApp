@@ -23,6 +23,15 @@ export class AdminLoginComponent {
     this.adminAuthService.isLoggedIn().subscribe(status => {
       this.isLoggedIn = status;
     });
+
+    const urlPath = window.location.pathname.toLowerCase();
+    const page = urlPath.split('/')[1] || 'login';
+
+    if (page == "login") {
+      this.logIn = true;
+    } else if (page == "register") {
+      this.logIn = false;
+    }
   }
 
   async signUp() {

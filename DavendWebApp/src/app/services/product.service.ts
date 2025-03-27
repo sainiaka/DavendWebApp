@@ -11,6 +11,10 @@ export class ProductService {
     return await this.supabaseProduct.getProducts();
   }
 
+  async getProductByID(id: any) {
+    return await this.supabaseProduct.getProductByID(id)
+  }
+
   async addProduct(name: string, description: string, qty: number, imageURL: string) {
     return await this.supabaseProduct.addProduct(name, description, qty, imageURL);
   }
