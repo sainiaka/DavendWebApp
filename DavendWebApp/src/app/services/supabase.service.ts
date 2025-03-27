@@ -62,8 +62,18 @@ export class SupabaseService {
     return data || [];
   }
 
+  // Fetch one product
+  async getProductByID(id: string) {
+    const { data, error } = await this.supabase.from('Products').select('*').eq('id', id).single();
+    if (error) {
+      console.error('Error finding product:', error.message);
+      throw error;
+    }
+    return data || [];
+  }
+
   // Add a new product
-  async addProduct(name: string, description: string, qty: number, imageURL: string) {
+  async addProduct(name: string, description: string, price: number, qty: number, imageURL: string) {
     const { data, error } = await this.supabase
       .from('Products')
       .insert([{ name, description, qty, imageURL }]);
@@ -76,7 +86,7 @@ export class SupabaseService {
   }
 
   // Update an existing product
-  async updateProduct(id: string, name: string, description: string, qty: number, imageURL: string) {
+  async updateProduct(id: string, name: string, description: string, price: number, qty: number, imageURL: string) {
     const { data, error } = await this.supabase
       .from('Products')
       .update({ name, description, qty, imageURL })

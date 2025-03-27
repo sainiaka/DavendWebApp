@@ -36,6 +36,20 @@
   align-items: center;
 }
 
+.header-right button {
+  border: none;
+  cursor: pointer;
+  background-color: #000;
+  color: white;
+}
+
+.header-right button:hover {
+  cursor: pointer;
+  border-bottom: solid white;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
 .divider {
   margin: 0 0.5rem;
   color: #aaa;
@@ -60,10 +74,26 @@
   margin-right: 10px;
 }
 
-.nav-links a {
+.nav-links button {
   margin-left: 5rem;
   text-decoration: none;
   color: black;
   font-weight: bold;
   font-size: 25px;
+  background-color: white;
+  border: none;
+  padding: 0.5rem 1rem; 
+  border-bottom: 3px solid transparent; 
+  transition: all 0.3s ease;
+}
+
+.nav-links button:hover {
+  cursor: pointer;
+  border-bottom: solid #000;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.active-nav {
+  border-bottom: 3px solid black !important; 
 }

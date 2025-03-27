@@ -12,6 +12,7 @@
       <h3>Add Product</h3>
       <input type="text" placeholder="Name" [(ngModel)]="newProduct.name">
       <input type="text" placeholder="Description" [(ngModel)]="newProduct.description">
+      <input type="number" placeholder="Price" [(ngModel)]="newProduct.price">
       <input type="number" placeholder="Quantity" [(ngModel)]="newProduct.qty">
       <input type="text" placeholder="Image URL" [(ngModel)]="newProduct.imageURL">
       <button (click)="addProduct()">Add Product</button>
@@ -23,34 +24,37 @@
   <h3>Products</h3>
   <table border="1">
       <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Quantity</th>
-          <th>Image</th>
-          <th>Actions</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Actions</th>
       </tr>
       <tr *ngFor="let product of products">
-          <td>{{ product.id }}</td>
-          <td>{{ product.name }}</td>
-          <td>{{ product.description }}</td>
-          <td>{{ product.qty }}</td>
-          <td><img [src]="product.imageURL" class="product-img"></td>
-          <td>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.qty }}</td>
+            <td><img [src]="product.imageURL" class="product-img"></td>
+            <td>
               <button (click)="editProduct(product)" class="edit-btn">Edit</button>
               <button (click)="deleteProduct(product.id)" class="action-btn">Delete</button>
-          </td>
+            </td>
       </tr>
   </table>
 
   <!-- Edit Product Form -->
   <div *ngIf="editingProduct" class="edit-product">
-      <h3>Edit Product</h3>
-      <input type="text" [(ngModel)]="editingProduct.name">
-      <input type="text" [(ngModel)]="editingProduct.description">
-      <input type="number" [(ngModel)]="editingProduct.qty">
-      <input type="text" [(ngModel)]="editingProduct.imageURL">
-      <button (click)="saveEdit()">Save</button>
-      <button (click)="editingProduct = null">Cancel</button>
+        <h3>Edit Product</h3>
+        <input type="text" [(ngModel)]="editingProduct.name">
+        <input type="text" [(ngModel)]="editingProduct.description">
+        <input type="number" [(ngModel)]="editingProduct.price">
+        <input type="number" [(ngModel)]="editingProduct.qty">
+        <input type="text" [(ngModel)]="editingProduct.imageURL">
+        <button (click)="saveEdit()">Save</button>
+        <button (click)="editingProduct = null">Cancel</button>
   </div>
 </div>

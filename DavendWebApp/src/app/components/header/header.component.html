@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <!-- ======================== -->
 <!-- Black Header (Contact Info + Auth Links) -->
 <!-- ======================== -->
@@ -21,9 +23,9 @@
 
   <!-- Right: Register & Login Links -->
   <div class="header-right">
-    <a routerLink="/register">Register</a>
+    <button routerLink="/register">Register</button>
     <span class="divider">|</span>
-    <a routerLink="/login">Login</a>
+    <button routerLink="/login">Login</button>
   </div>
 </header>
 
@@ -38,10 +40,15 @@
 
   <!-- Navigation Links -->
   <nav class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Our Services</a>
-    <a href="#">Our Products</a>
-    <a href="#">Contact</a>
-  </nav>
+    <button [ngClass]="{'active-nav': page === 'home'}" routerLink="/">Home</button>
+    <button [ngClass]="{'active-nav': page === 'about'}" routerLink="/about">About</button>
+    <button [ngClass]="{'active-nav': page === 'services'}" routerLink="/services">Our Services</button>
+    <button [ngClass]="{'active-nav': page === 'products'}" routerLink="/products">Our Products</button>
+    <button [ngClass]="{'active-nav': page === 'contact'}" routerLink="/contact">Contact</button>
+    <button [ngClass]="{'active-nav': page === 'checkout'}" routerLink="/checkout">
+      <span class="material-icons">
+      shopping_cart <!-- Icon for Cart using google fonts -->
+      </span>
+    </button>
+  </nav>  
 </header>
