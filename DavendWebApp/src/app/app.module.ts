@@ -13,6 +13,7 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
     ProductsPageComponent,
     AboutPageComponent,
     ServicesPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    CheckoutPageComponent
   ],
   imports: [
     BrowserModule,

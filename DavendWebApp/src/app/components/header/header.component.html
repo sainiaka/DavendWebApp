@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <!-- ======================== -->
 <!-- Black Header (Contact Info + Auth Links) -->
 <!-- ======================== -->
@@ -43,5 +45,10 @@
     <button [ngClass]="{'active-nav': page === 'services'}" routerLink="/services">Our Services</button>
     <button [ngClass]="{'active-nav': page === 'products'}" routerLink="/products">Our Products</button>
     <button [ngClass]="{'active-nav': page === 'contact'}" routerLink="/contact">Contact</button>
+    <button [ngClass]="{'active-nav': page === 'checkout'}" routerLink="/checkout">
+      <span class="material-icons">
+      shopping_cart <!-- Icon for Cart using google fonts -->
+      </span>
+    </button>
   </nav>  
 </header>

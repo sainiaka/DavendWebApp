@@ -8,6 +8,7 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: "contact", component: ContactPageComponent},
   { path: 'manage-inventory', component: ManageInventoryComponent, canActivate: [AuthGuard] },
   { path: 'login', component: AdminLoginComponent },
-  { path: 'register', component: AdminLoginComponent }
+  { path: 'register', component: AdminLoginComponent },
+  { path: 'checkout', component: CheckoutPageComponent }
 ];
 
 @NgModule({

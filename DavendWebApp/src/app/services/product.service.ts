@@ -15,12 +15,12 @@ export class ProductService {
     return await this.supabaseProduct.getProductByID(id)
   }
 
-  async addProduct(name: string, description: string, qty: number, imageURL: string) {
-    return await this.supabaseProduct.addProduct(name, description, qty, imageURL);
+  async addProduct(name: string, description: string, price: number, qty: number, imageURL: string) {
+    return await this.supabaseProduct.addProduct(name, description, price, qty, imageURL);
   }
 
-  async updateProduct(id: string, name: string, description: string, qty: number, imageURL: string) {
-    return await this.supabaseProduct.updateProduct(id, name, description, qty, imageURL);
+  async updateProduct(id: string, name: string, description: string, price: number, qty: number, imageURL: string) {
+    return await this.supabaseProduct.updateProduct(id, name, description, price, qty, imageURL);
   }
 
   async deleteProduct(id: string) {

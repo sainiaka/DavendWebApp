@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ManageInventoryComponent implements OnInit {
   products: any[] = [];
-  newProduct = { name: '', description: '', qty: 0, imageURL: '' };
+  newProduct = { name: '', description: '', price: 0, qty: 0, imageURL: '' };
   editingProduct: any = null;
 
   constructor(private productService: ProductService, private adminAuthService: AdminAuthService, private router: Router) {}
@@ -27,10 +27,11 @@ export class ManageInventoryComponent implements OnInit {
     await this.productService.addProduct(
       this.newProduct.name,
       this.newProduct.description,
+      this.newProduct.price,
       this.newProduct.qty,
       this.newProduct.imageURL
     );
-    this.newProduct = { name: '', description: '', qty: 0, imageURL: '' }; // Reset form
+    this.newProduct = { name: '', description: '', price: 0, qty: 0, imageURL: '' }; // Reset form
     await this.loadProducts();
   }
 
@@ -42,6 +43,7 @@ export class ManageInventoryComponent implements OnInit {
     await this.productService.updateProduct(
       this.editingProduct.id,
       this.editingProduct.name,
+      this.editingProduct.price,
       this.editingProduct.description,
       this.editingProduct.qty,
       this.editingProduct.imageURL

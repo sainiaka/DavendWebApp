@@ -53,6 +53,8 @@ export class ProductsPageComponent {
       // Save updated cart
       localStorage.setItem('cart', JSON.stringify(cart));
 
+      alert('Product added to cart!');
+
       console.log('Cart updated:', cart);
     } catch (error) {
       console.error('Error adding product to cart:', error);
