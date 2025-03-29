@@ -31,11 +31,31 @@ export class CheckoutPageComponent implements OnInit {
         };        
 
         this.cartItems.push(fullProduct);
-        this.total += fullProduct.totalPrice;
+        this.total = this.roundToTwo(this.total + fullProduct.totalPrice);
       } catch (error) {
         console.error(`Failed to fetch product with ID ${item.id}:`, error);
       }
     }
+
+    this.recalculateTotal();
+  }
+
+  private roundToTwo(num: number): number {
+    return Math.round((num + Number.EPSILON) * 100) / 100;
+  }  
+
+  private recalculateTotal() {
+    this.total = this.roundToTwo(
+      this.cartItems.reduce((acc, item) => acc + item.totalPrice, 0)
+    );
+  }  
+
+  getImageUrl(fileName: string): string {
+    return `https://tqeazhwfhejsjgrtxhcw.supabase.co/storage/v1/object/public/product-images/${fileName}`;
+  }  
+
+  clicked() {
+    console.log('Clicked!');
   }
 
   removeFromCart(id: string, qtyToRemove: number) {
@@ -45,13 +65,15 @@ export class CheckoutPageComponent implements OnInit {
     const item = this.cartItems[index];
   
     if (qtyToRemove >= item.qty) {
-      this.total -= item.totalPrice;
-      this.cartItems.splice(index, 1); // remove item completely
+      this.total = this.roundToTwo(this.total - item.totalPrice);
+      this.cartItems.splice(index, 1);
     } else {
       item.qty -= qtyToRemove;
-      item.totalPrice = item.qty * item.price;
-      this.total -= item.price * qtyToRemove;
+      item.totalPrice = this.roundToTwo(item.qty * item.price);
+      this.total = this.roundToTwo(this.total - item.price * qtyToRemove);
     }
+
+    this.recalculateTotal();
   
     // Update localStorage
     const updatedCart = this.cartItems.map(item => ({

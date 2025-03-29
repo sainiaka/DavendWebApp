@@ -16,15 +16,27 @@ export class ProductsPageComponent {
 
   async ngOnInit() {
     this.products = await this.productService.getProducts();
-    this.filteredProducts = this.products; // Initialize with all products
+    this.filteredProducts = this.products.map(product => ({
+      ...product,
+      inputQty: 1 // 👈 default qty for each product
+    }));
   }
 
   // Filter products in real-time as the user types
   filterProducts() {
-    this.filteredProducts = this.products.filter(product =>
-      product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
-  }
+    this.filteredProducts = this.products
+      .filter(product =>
+        product.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+      )
+      .map(product => ({
+        ...product,
+        inputQty: product.inputQty || 1
+      }));
+  }  
+
+  getImageUrl(fileName: string): string {
+    return `https://tqeazhwfhejsjgrtxhcw.supabase.co/storage/v1/object/public/product-images/${fileName}`;
+  }  
 
   // Add productrs to cart
   async addProduct(id: string, qty: number) {

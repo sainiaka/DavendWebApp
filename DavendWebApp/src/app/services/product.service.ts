@@ -19,6 +19,10 @@ export class ProductService {
     return await this.supabaseProduct.addProduct(name, description, price, qty, imageURL);
   }
 
+  async uploadImage(filePath: string, file: File) {
+    return await this.supabaseProduct.uploadImage(filePath, file);
+  }
+
   async updateProduct(id: string, name: string, description: string, price: number, qty: number, imageURL: string) {
     return await this.supabaseProduct.updateProduct(id, name, description, price, qty, imageURL);
   }
