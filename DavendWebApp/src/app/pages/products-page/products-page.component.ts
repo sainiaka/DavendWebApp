@@ -34,6 +34,10 @@ export class ProductsPageComponent {
       }));
   }  
 
+  getImageUrl(fileName: string): string {
+    return `https://tqeazhwfhejsjgrtxhcw.supabase.co/storage/v1/object/public/product-images/${fileName}`;
+  }  
+
   // Add productrs to cart
   async addProduct(id: string, qty: number) {
     try {

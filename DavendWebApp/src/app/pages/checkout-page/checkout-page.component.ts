@@ -50,6 +50,10 @@ export class CheckoutPageComponent implements OnInit {
     );
   }  
 
+  getImageUrl(fileName: string): string {
+    return `https://tqeazhwfhejsjgrtxhcw.supabase.co/storage/v1/object/public/product-images/${fileName}`;
+  }  
+
   clicked() {
     console.log('Clicked!');
   }
