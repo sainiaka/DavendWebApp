@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Products to Cart</title>
+</head>
+<body style="font-family: Arial, sans-serif; color: #333; background-color: #fff; margin: 0; padding: 0;">
+
+  <!-- HEADER SECTION -->
+  <header style="background-color: #000; color: #fff;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 2rem;">
+      <div>
+        <p style="margin: 0; line-height: 1.4;">1234 Street Name, Unit# Mississauga, Ontario</p>
+        <p style="margin: 0; line-height: 1.4;">P: 905-555-1212</p>
+        <p style="margin: 0; line-height: 1.4;">F: 905-555-3434</p>
+        <p style="margin: 0; line-height: 1.4;">sales@companypunch.ca</p>
+      </div>
+      <div>
+        <a href="#" style="color: #fff; margin-left: 1rem; text-decoration: none;">Register</a>
+        <a href="#" style="color: #fff; margin-left: 1rem; text-decoration: none;">Login</a>
+      </div>
+    </div>
+    <nav style="background-color: #222;">
+      <ul style="list-style: none; display: flex; justify-content: center; padding: 0; margin: 0;">
+        <li style="margin: 0 1rem;">
+          <a href="#" style="color: #fff; text-decoration: none; padding: 0.75rem 0.5rem; display: block;">Home</a>
+        </li>
+        <li style="margin: 0 1rem;">
+          <a href="#" style="color: #fff; text-decoration: none; padding: 0.75rem 0.5rem; display: block;">Our Products</a>
+        </li>
+        <li style="margin: 0 1rem;">
+          <a href="#" style="color: #fff; text-decoration: none; padding: 0.75rem 0.5rem; display: block;">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main style="padding: 2rem;">
+    <h1 style="margin-bottom: 1rem; font-size: 1.5rem;">Filter Products</h1>
+    <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+      <div>
+        <label for="category" style="font-weight: bold; margin-bottom: 0.5rem; display: block;">Category</label>
+        <select id="category" name="category" style="padding: 0.5rem; font-size: 1rem;">
+          <option value="">--Select--</option>
+          <option value="punches">Punches</option>
+          <option value="dies">Dies</option>
+          <option value="tooling-components">Tooling Components</option>
+        </select>
+      </div>
+      <div>
+        <label for="product-name" style="font-weight: bold; margin-bottom: 0.5rem; display: block;">Product Name</label>
+        <input type="text" id="product-name" name="product-name" placeholder="Search product..." style="padding: 0.5rem; font-size: 1rem;" />
+      </div>
+    </div>
+
+    <section style="display: flex; flex-direction: column; gap: 2rem;">
+      <!-- PUNCHES -->
+      <div>
+        <h2 style="margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">Punches</h2>
+        <div style="display: inline-block; width: 200px; text-align: center; margin-right: 2rem; margin-bottom: 1rem; vertical-align: top;">
+          <img src="images/standard-round-punch.jpg" alt="Standard round punches" style="width: 100%; height: auto; display: block; margin-bottom: 0.5rem;" />
+          <p style="margin-bottom: 0.5rem;">Standard round punches</p>
+          <button style="background-color: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;">Add to Cart</button>
+        </div>
+        <div style="display: inline-block; width: 200px; text-align: center; margin-right: 2rem; margin-bottom: 1rem; vertical-align: top;">
+          <img src="images/shaped-punches.jpg" alt="Shaped punches" style="width: 100%; height: auto; display: block; margin-bottom: 0.5rem;" />
+          <p style="margin-bottom: 0.5rem;">Shaped punches</p>
+          <button style="background-color: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;">Add to Cart</button>
+        </div>
+        <div style="display: inline-block; width: 200px; text-align: center; margin-right: 2rem; margin-bottom: 1rem; vertical-align: top;">
+          <img src="images/tapered-punches.jpg" alt="Tapered punches" style="width: 100%; height: auto; display: block; margin-bottom: 0.5rem;" />
+          <p style="margin-bottom: 0.5rem;">Tapered punches</p>
+          <button style="background-color: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- DIES -->
+      <div>
+        <h2 style="margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">Dies</h2>
+        <div style="display: inline-block; width: 200px; text-align: center; margin-right: 2rem; margin-bottom: 1rem; vertical-align: top;">
+          <img src="images/progressive-die-set.jpg" alt="Progressive die set" style="width: 100%; height: auto; display: block; margin-bottom: 0.5rem;" />
+          <p style="margin-bottom: 0.5rem;">Progressive die set</p>
+          <button style="background-color: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;">Add to Cart</button>
+        </div>
+        <div style="display: inline-block; width: 200px; text-align: center; margin-right: 2rem; margin-bottom: 1rem; vertical-align: top;">
+          <img src="images/blanking-die-set.jpg" alt="Blanking die set" style="width: 100%; height: auto; display: block; margin-bottom: 0.5rem;" />
+          <p style="margin-bottom: 0.5rem;">Blanking die set</p>
+          <button style="background-color: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- TOOLING COMPONENTS -->
+      <div>
+        <h2 style="margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 2px solid #ccc; padding-bottom: 0.5rem;">Tooling Components</h2>
+        <div style="display: inline-block; width: 200px; text-align: center; margin-right: 2rem; margin-bottom: 1rem; vertical-align: top;">
+          <img src="images/die-button-set.jpg" alt="Die button set" style="width: 100%; height: auto; display: block; margin-bottom: 0.5rem;" />
+          <p style="margin-bottom: 0.5rem;">Die button set</p>
+          <button style="background-color: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;">Add to Cart</button>
+        </div>
+        <div style="display: inline-block; width: 200px; text-align: center; margin-right: 2rem; margin-bottom: 1rem; vertical-align: top;">
+          <img src="images/pilot-punch.jpg" alt="Pilot punch" style="width: 100%; height: auto; display: block; margin-bottom: 0.5rem;" />
+          <p style="margin-bottom: 0.5rem;">Pilot punch</p>
+          <button style="background-color: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;">Add to Cart</button>
+        </div>
+        <div style="display: inline-block; width: 200px; text-align: center; margin-right: 2rem; margin-bottom: 1rem; vertical-align: top;">
+          <img src="images/holder-block.jpg" alt="Holder block" style="width: 100%; height: auto; display: block; margin-bottom: 0.5rem;" />
+          <p style="margin-bottom: 0.5rem;">Holder block</p>
+          <button style="background-color: #000; color: #fff; border: none; padding: 0.5rem 1rem; cursor: pointer;">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer style="background-color: #f1f1f1; color: #333; text-align: center; padding: 1rem 2rem; margin-top: 2rem;">
+    <p style="margin: 0.5rem 0;">1234 Street Name, Unit# Mississauga, Ontario | P: 905-555-1212 | F: 905-555-3434</p>
+    <p style="margin: 0.5rem 0;">sales@companypunch.ca | www.companypunch.ca</p>
+  </footer>
+
+</body>
+</html>
