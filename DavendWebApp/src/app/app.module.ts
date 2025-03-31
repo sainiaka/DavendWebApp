@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ManageInventoryComponent } from './pages/manage-inventory/manage-inventory.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -14,6 +14,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
+import { ServiceRequestPageComponent } from './pages/service-request-page/service-request-page.component';
 
 
 @NgModule({
@@ -28,12 +29,14 @@ import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.compo
     AboutPageComponent,
     ServicesPageComponent,
     ContactPageComponent,
-    CheckoutPageComponent
+    CheckoutPageComponent,
+    ServiceRequestPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
