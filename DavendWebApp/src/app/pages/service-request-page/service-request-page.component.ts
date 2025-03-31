@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-service-request-page',
@@ -19,7 +20,7 @@ export class ServiceRequestPageComponent {
   requestForm: FormGroup;
   emailTitle = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.requestForm = this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -49,19 +50,23 @@ export class ServiceRequestPageComponent {
       this.requestForm.markAllAsTouched();
       return;
     }
+  
+    const form = new FormData();
+    form.append('fullName', this.requestForm.get('fullName')?.value);
+    form.append('email', this.requestForm.get('email')?.value);
+    form.append('phoneNumber', this.requestForm.get('phoneNumber')?.value);
+    form.append('message', this.requestForm.get('message')?.value);
+    form.append('selectedService', this.selectedService);
+    form.append('designFile', this.requestForm.get('designFile')?.value);
 
-    const formData = this.requestForm.value;
-
-    const emailBody = `
-      Service: ${this.selectedService}
-      Full Name: ${formData.fullName}
-      Email: ${formData.email}
-      Phone Number: ${formData.phoneNumber}
-      Message: ${formData.message}
-    `;
-
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=example@gmail.com&su=${encodeURIComponent(this.selectedService + ' - Service Request')}&body=${encodeURIComponent(emailBody)}`;
-window.open(gmailLink, '_blank');
+    this.http.post('http://localhost:3000/send-email', form)
+      .subscribe({
+        next: (res: any) => {
+          alert('Email sent!');
+          if (res.preview) window.open(res.preview, '_blank');
+        },
+        error: () => alert('Failed to send email.')
+      });
   }
 
 }

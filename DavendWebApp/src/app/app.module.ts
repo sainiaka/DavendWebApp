@@ -15,6 +15,7 @@ import { ServicesPageComponent } from './pages/services-page/services-page.compo
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { ServiceRequestPageComponent } from './pages/service-request-page/service-request-page.component';
+import { provideHttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { ServiceRequestPageComponent } from './pages/service-request-page/servic
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
