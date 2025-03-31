@@ -8,13 +8,14 @@
   </div>
 
   <div *ngFor="let item of cartItems" class="checkout-card">
-    <img [src]="item.imageURL" alt="{{ item.name }}" class="product-image"/>
+    <img [src]="getImageUrl(item.imageURL)" class="product-image">
+
     <div class="product-details">
       <h2>{{ item.name }}</h2>
       <p>{{ item.description }}</p>
-      <p>Price per unit: ${{ item.price }}</p>
+      <p>Price per unit: ${{ item.price.toFixed(2) }}</p>
       <p>Quantity: {{ item.qty }}</p>
-      <p>Total for this product: ${{ item.totalPrice }}</p>
+      <p>Total for this product: ${{ item.totalPrice.toFixed(2) }}</p>
   
       <div class="remove-control">
         <input type="number" min="1" [max]="item.qty" [(ngModel)]="item.removeQty">
@@ -24,10 +25,10 @@
   </div>  
 
   <div class="subtotal">
-    <h2>Subtotal: ${{ total }}</h2>
+    <h2>Subtotal: ${{ total.toFixed(2) }}</h2>
   </div>
 
-  <button class="checkout-button">Checkout</button>
+  <button [disabled]="cartItems.length === 0" class="checkout-button" (click)="clicked()">Checkout</button>
 </div>
 
 <app-footer></app-footer>

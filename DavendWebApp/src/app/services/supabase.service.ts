@@ -85,11 +85,19 @@ export class SupabaseService {
     return data;
   }
 
+  async uploadImage(filePath: string, file: File) {
+    const { data, error } = await this.supabase.storage
+      .from('product-images') // 👈 bucket name
+      .upload(filePath, file);
+  
+    return { data, error };
+  }  
+
   // Update an existing product
   async updateProduct(id: string, name: string, description: string, price: number, qty: number, imageURL: string) {
     const { data, error } = await this.supabase
       .from('Products')
-      .update({ name, description, qty, imageURL })
+      .update({ name, description, qty, imageURL, price })
       .eq('id', id);
     
     if (error) {
