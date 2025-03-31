@@ -9,12 +9,14 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
+import { ServiceRequestPageComponent } from './pages/service-request-page/service-request-page.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: "about", component: AboutPageComponent},
   { path: "products", component: ProductsPageComponent},
   { path: "services", component: ServicesPageComponent},
+  { path: "service-request", component: ServiceRequestPageComponent},
   { path: "contact", component: ContactPageComponent},
   { path: 'manage-inventory', component: ManageInventoryComponent, canActivate: [AuthGuard] },
   { path: 'login', component: AdminLoginComponent },

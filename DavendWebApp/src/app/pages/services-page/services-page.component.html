@@ -1,3 +1,73 @@
 <app-header></app-header>
-<p>services-page works!</p>
+
+<div class="services-page-wrapper">
+
+  <!-- Page Title / Intro (Optional) -->
+  <div class="services-hero">
+    <h1>Our Services</h1>
+  </div>
+
+  <!-- Services Grid -->
+  <div class="services-grid">
+    <!-- Left Column: Service Descriptions -->
+    <div class="services-list">
+      <!-- Surface Grinding -->
+      <section class="service-item">
+        <img src="assets/images/surface-grinding.jpg" alt="Surface Grinding" />
+        <h2>Surface Grinding</h2>
+        <p>
+          Our precision surface grinding services deliver high-quality
+          finishes on a wide range of materials, ensuring accuracy for
+          critical manufacturing needs.
+        </p>
+      </section>
+
+      <!-- Centerless Grinding -->
+      <section class="service-item">
+        <img src="assets/images/centerless-grinding.jpg" alt="Centerless Grinding" />
+        <h2>Centerless Grinding</h2>
+        <p>
+          We offer centerless grinding solutions that enable us to quickly
+          and accurately process cylindrical parts of various diameters.
+        </p>
+      </section>
+
+      <!-- Punch and Die Manufacturing -->
+      <section class="service-item">
+        <img src="assets/images/punch-and-die.jpg" alt="Punch and Die Manufacturing" />
+        <h2>Punch and Die Manufacturing</h2>
+        <p>
+          Our punch and die manufacturing services provide high-precision
+          tooling for metal forming applications. From concept to final
+          product, we work with you to create reliable, long-lasting dies.
+        </p>
+      </section>
+    </div>
+
+    <!-- Right Column: Featured Service / CTA -->
+    <div class="featured-service">
+      <div class="featured-service-content">
+        <img
+          src="assets/images/punch-die-machine.jpg"
+          alt="Punch and Die Machine"
+          class="featured-image"
+        />
+        <h2>Punch and Die Manufacturing</h2>
+        <p>
+          Our punch and die manufacturing process is designed to meet the most
+          demanding production needs. With years of experience, we can handle
+          complex designs and deliver consistent, quality results.
+        </p>
+        <p>
+          Interested in requesting a quote or scheduling a service?
+          Click below to fill out our application form.
+        </p>
+        <!-- Update the routerLink path to match your actual route -->
+        <a class="apply-btn" routerLink="/service-request">Apply for Service</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <app-footer></app-footer>

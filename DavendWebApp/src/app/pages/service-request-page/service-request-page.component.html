@@ -1,0 +1,88 @@
+<app-header></app-header>
+
+<div class="service-request-container">
+
+  <!-- Page Title / Intro -->
+  <div class="request-hero">
+    <h1>Apply for Punch and Die Manufacturing</h1>
+    <p>
+      You are currently browsing punch and die manufacturing services. Please
+      fill out the form below and our staff will get back to you with a quote
+      and requested design details.
+    </p>
+  </div>
+
+  <!-- Main Content Grid: Form (left) & Services Sidebar (right) -->
+  <div class="request-grid">
+    
+    <!-- Left Column: Service Request Form -->
+    <div class="request-form-section">
+        <h1>{{ titleHeader }}</h1>
+      <h2>Service Request Form:</h2>
+      <!-- If using Angular Reactive/Template forms, adjust accordingly -->
+      <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" type="text" formControlName="fullName" />
+          <div *ngIf="requestForm.get('fullName')?.touched && requestForm.get('fullName')?.invalid" class="error">Full Name is required</div>
+        </div>
+      
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" />
+          <div *ngIf="requestForm.get('email')?.touched && requestForm.get('email')?.invalid" class="error">
+            Valid Email is required
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input id="phoneNumber" type="tel" formControlName="phoneNumber" />
+          <div *ngIf="requestForm.get('phoneNumber')?.touched && requestForm.get('phoneNumber')?.invalid" class="error">
+            Phone Number is required
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" formControlName="message"></textarea>
+          <div *ngIf="requestForm.get('message')?.touched && requestForm.get('message')?.invalid" class="error">
+            Message is required
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label for="uploadDesign">Upload Design Print</label>
+          <input id="uploadDesign" type="file" (change)="onFileChange($event)" />
+          <div *ngIf="requestForm.get('designFile')?.touched && requestForm.get('designFile')?.invalid" class="error">
+            Design file is required
+          </div>
+        </div>
+      
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>      
+    </div>
+
+    <!-- Right Column: Sidebar with other services -->
+    <aside class="services-sidebar">
+      <h3>Services</h3>
+      <div class="service-buttons">
+        <button
+          *ngFor="let service of services"
+          (click)="selectService(service)"
+          [class.active]="selectedService === service"
+        >
+          {{ service }}
+        </button>
+      </div>
+      <img
+        src="assets/images/service-sidebar.jpg"
+        alt="Service Sidebar"
+        class="sidebar-image"
+      />
+    </aside>
+
+  </div>
+</div>
+
+<app-footer></app-footer>
