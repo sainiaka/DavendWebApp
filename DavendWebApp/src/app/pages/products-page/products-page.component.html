@@ -16,14 +16,23 @@
     <h2>Available Products</h2>
     <div class="products-grid">
       <div class="product-card" *ngFor="let product of filteredProducts">
-        <img [src]="product.imageURL" alt="Product Image">
+        <img [src]="getImageUrl(product.imageURL)" class="product-img">
         <h3>{{ product.name }}</h3>
         <p>{{ product.description }}</p>
         <p [ngStyle]="{color: 'red'}">${{ product.price }}</p>
         <span>Quantity Available: {{ product.qty }}</span>
         <br>
-        <input type="number" [(ngModel)]="productQty" placeholder="Quantity">
-        <button (click)="addProduct(product.id, productQty)">Add Product</button>
+        <input type="number" [(ngModel)]="product.inputQty" placeholder="Quantity" min="1">
+        <div *ngIf="product.inputQty > product.qty" class="error-message">
+          Not enough stock available.
+        </div>
+        <div *ngIf="product.inputQty <= 0" class="error-message">
+          Please enter a valid quantity.
+        </div>
+        <div *ngIf="product.inputQty > 0 && product.inputQty <= product.qty" class="success-message">
+          Available for purchase.
+        </div>
+        <button [disabled]="product.inputQty <= 0 || product.inputQty > product.qty" (click)="addProduct(product.id, product.inputQty)" class="addProduct-button">Add Product</button>
       </div>
     </div>
   </div>

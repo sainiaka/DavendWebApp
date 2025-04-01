@@ -1,0 +1,135 @@
+.service-request-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    font-family: sans-serif;
+  }
+  
+  /* Hero / Intro */
+  .request-hero {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .request-hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .request-hero p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Main Grid: Form (2/3) + Sidebar (1/3) */
+  .request-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+  
+  /* Left: Form Section */
+  .request-form-section {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 6px;
+  }
+  .request-form-section h2 {
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group textarea,
+  .form-group input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .form-group textarea {
+    resize: vertical;
+  }
+  .submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Right: Sidebar */
+  .services-sidebar {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  .services-sidebar h3 {
+    margin-bottom: 1rem;
+  }
+
+  .sidebar-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+
+  /* New styles for service buttons */
+.service-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .service-buttons button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .service-buttons button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .service-buttons button.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+  
+  /* Responsive Layout */
+  @media screen and (max-width: 768px) {
+    .request-grid {
+      grid-template-columns: 1fr;
+    }
+    .services-sidebar {
+      margin-top: 2rem;
+    }
+  }
+  
