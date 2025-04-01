@@ -1,0 +1,158 @@
+/* Global Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* Header */
+  .site-header {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+  }
+  
+  .header-top .company-info p {
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .header-links a {
+    color: #fff;
+    margin-left: 1rem;
+    text-decoration: none;
+  }
+  
+  .header-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Navigation */
+  .main-nav {
+    background-color: #222;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-nav li {
+    margin: 0 1rem;
+  }
+  
+  .main-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 0.5rem;
+    display: block;
+  }
+  
+  .main-nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main Content */
+  main {
+    padding: 2rem;
+  }
+  
+  main h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .filter-section {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .filter-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .filter-group select,
+  .filter-group input {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Product Categories */
+  .product-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .product-category h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.5rem;
+  }
+  
+  .product-item {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    vertical-align: top;
+  }
+  
+  .product-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-item p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-item button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .product-item button:hover {
+    background-color: #444;
+  }
+  
+  /* Footer */
+  .site-footer {
+    background-color: #f1f1f1;
+    color: #333;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+  }
+  
+  .site-footer p {
+    margin: 0.5rem 0;
+  }
+  
